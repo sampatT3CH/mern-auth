@@ -5,6 +5,7 @@ dotenv.config();
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import bodyParser from 'body-parser'
+import cookieParser from "cookie-parser";
 
 
 
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+app.use(cookieParser());
 
 app.listen(3000,() => {
     console.log("Server is running on port 3000");
